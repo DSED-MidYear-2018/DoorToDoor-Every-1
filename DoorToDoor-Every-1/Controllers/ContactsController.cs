@@ -1,35 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using DoorToDoor_Every_1.Models;
 
 namespace DoorToDoor_Every_1.Controllers
 {
-    public class HomeController : Controller
+    public class ContactsController : Controller
     {
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Admin()
+        public IActionResult Interested()
         {
             return View();
         }
 
-        public IActionResult Contact()
+        public IActionResult NotInterested()
         {
-            ViewData["Message"] = "Your contact page.";
-
             return View();
         }
 
-        public IActionResult Error()
+        public IActionResult NotHome()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
+        }
+
+        public IActionResult FollowUp()
+        {
+            return View();
         }
     }
 }

@@ -33,3 +33,17 @@
         display: none;
     }
 }
+
+UL.nav > LI {
+    float: left;
+}
+
+UL.nav UL {
+    left: -10000px;
+    position: absolute;
+}
+
+UL.nav > LI:hover UL {
+    left: 0;
+    top: 24px; /* IE7 has problems without this */
+}
