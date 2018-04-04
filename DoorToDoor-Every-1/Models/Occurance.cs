@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
     public class Occurance
     {
-    public string Id { get; set; }
+    public int Id { get; set; }
     public string Title { get; set; }
     }
 
