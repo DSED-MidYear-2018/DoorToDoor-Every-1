@@ -7,7 +7,11 @@ namespace DoorToDoor-Every-1.Models
 {
     public class FollowUp
     {
-    public string Id 
+    public string Id { get; set }
+    public string DateReturn { get; set}
+    public string TimeReturn { get; set}
+    public string HomeId_F { get; set }
+    public string OccurenceID_F { get; set }
 
     }
 }
