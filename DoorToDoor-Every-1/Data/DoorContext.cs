@@ -46,7 +46,5 @@ namespace DoorToDoor_Every_1.Data
         //https://docs.microsoft.com/en-us/ef/core/modeling/relationships
 
 
-
-
     }
 }
