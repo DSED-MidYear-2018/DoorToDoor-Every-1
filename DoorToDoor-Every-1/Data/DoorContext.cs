@@ -41,6 +41,11 @@ namespace DoorToDoor_Every_1.Data
                 .HasKey(c => c.Id);
         }
 
+
+        //https://docs.microsoft.com/en-us/ef/core/modeling/keys
+
+        public DbSet<DoorToDoor_Every_1.Models.AdminRole> AdminRole { get; set; }
+
         //https://docs.microsoft.com/en-us/ef/core/modeling/keys
 
         //https://docs.microsoft.com/en-us/ef/core/modeling/relationships
