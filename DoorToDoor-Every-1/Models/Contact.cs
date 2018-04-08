@@ -18,6 +18,6 @@ namespace DoorToDoor_Every_1.Models
 
         public string Email { get; set; }
 
-        public int HomeId_F { get; set; }
+        public List<Home> Homes { get; set; }
     }
 }

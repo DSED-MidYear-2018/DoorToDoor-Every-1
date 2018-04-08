@@ -13,7 +13,7 @@ namespace DoorToDoor_Every_1.Models
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public AdminRole RoleId_F { get; set; }
+        public List<AdminRole> AdminRoles { get; set; }
     }
 }
 
