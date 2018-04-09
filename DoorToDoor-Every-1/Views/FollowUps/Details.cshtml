@@ -1,0 +1,30 @@
+﻿@model DoorToDoor_Every_1.Models.FollowUp
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FollowUp</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DateReturn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateReturn)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeReturn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TimeReturn)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
