@@ -60,7 +60,8 @@ namespace DoorToDoor_Every_1.Controllers
             {
                 _context.Add(address);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Create", "Homes");
+                //https://forums.asp.net/t/1909349.aspx?Returning+view+that+is+in+different+folder
             }
             return View(address);
         }
