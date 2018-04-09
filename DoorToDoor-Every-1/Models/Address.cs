@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Azure.KeyVault.Models;
 
 namespace DoorToDoor_Every_1.Models
 {
@@ -11,14 +13,23 @@ namespace DoorToDoor_Every_1.Models
 
         public string Unit { get; set; }
 
+        [Required]
+        [RegularExpression(("[0-9]+"), ErrorMessage = "Please enter a valid number")]
         public int StreetNumber { get; set; }
 
+        [Required]
+        public string StreetName { get; set; }
+
+        [Required]
         public string Suburb { get; set; }
 
+        [Required]
         public string City { get; set; }
 
+        [Required]
         public string Country { get; set; }
 
+        [Required]
         public string Postcode { get; set; }
 
     }
