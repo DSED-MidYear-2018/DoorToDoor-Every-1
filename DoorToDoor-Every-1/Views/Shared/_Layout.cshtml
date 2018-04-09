@@ -32,15 +32,16 @@
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li>
-                        <a asp-area="" asp-controller="Home" asp-action="Contact">Contact ></a>
+                        <a asp-area="" asp-controller="Home" asp-action="ContactMenu">Contact</a>
                         <ul>
-                            <li><a asp-area="" asp-controller="Contacts" asp-action="Interested">Interested</a></li>
-                            <li><a asp-area="" asp-controller="Contacts" asp-action="NotInterested">Not Interested</a></li>
-                            <li><a asp-area="" asp-controller="Contacts" asp-action="NotHome">Not Home</a></li>
-                            <li><a asp-area="" asp-controller="Contacts" asp-action="FollowUp">Follow Up</a></li>
+                            <li><a asp-area="" asp-controller="ContactMenu" asp-action="Interested">Interested</a></li>
+                            <li><a asp-area="" asp-controller="ContactMenu" asp-action="NotInterested">Not Interested</a></li>
+                            <li><a asp-area="" asp-controller="ContactMenu" asp-action="NotHome">Not Home</a></li>
+                            <li><a asp-area="" asp-controller="ContactMenu" asp-action="FollowUp">Follow Up</a></li>
                         </ul>
                     </li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Admin">Admin</a></li>
+                    <li><a asp-area="" asp-controller="Addresses" asp-action="Create">Create New Contact</a></li>
 
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
