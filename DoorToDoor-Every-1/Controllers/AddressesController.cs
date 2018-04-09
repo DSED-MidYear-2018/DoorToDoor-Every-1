@@ -10,22 +10,22 @@ using DoorToDoor_Every_1.Models;
 
 namespace DoorToDoor_Every_1.Controllers
 {
-    public class FollowUpsController : Controller
+    public class AddressesController : Controller
     {
         private readonly DoorContext _context;
 
-        public FollowUpsController(DoorContext context)
+        public AddressesController(DoorContext context)
         {
             _context = context;
         }
 
-        // GET: FollowUps
+        // GET: Addresses
         public async Task<IActionResult> Index()
         {
-            return View(await _context.FollowUps.ToListAsync());
+            return View(await _context.Addresses.ToListAsync());
         }
 
-        // GET: FollowUps/Details/5
+        // GET: Addresses/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,62 +33,62 @@ namespace DoorToDoor_Every_1.Controllers
                 return NotFound();
             }
 
-            var followUp = await _context.FollowUps
+            var address = await _context.Addresses
                 .SingleOrDefaultAsync(m => m.Id == id);
-            if (followUp == null)
+            if (address == null)
             {
                 return NotFound();
             }
 
-            return View(followUp);
+            return View(address);
         }
 
-        // GET: FollowUps/Create
+        // GET: Addresses/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: FollowUps/Create
+        // POST: Addresses/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,DateReturn,TimeReturn")] FollowUp followUp)
+        public async Task<IActionResult> Create([Bind("Id,Unit,StreetNumber,Suburb,City,Country,Postcode")] Address address)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(followUp);
+                _context.Add(address);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(followUp);
+            return View(address);
         }
 
-        // GET: FollowUps/Edit/5
+        // GET: Addresses/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
-            //This is an awesome comment
-            var followUp = await _context.FollowUps.SingleOrDefaultAsync(m => m.Id == id);
-            if (followUp == null)
+
+            var address = await _context.Addresses.SingleOrDefaultAsync(m => m.Id == id);
+            if (address == null)
             {
                 return NotFound();
             }
-            return View(followUp);
+            return View(address);
         }
 
-        // POST: FollowUps/Edit/5
+        // POST: Addresses/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,DateReturn,TimeReturn")] FollowUp followUp)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Unit,StreetNumber,Suburb,City,Country,Postcode")] Address address)
         {
-            if (id != followUp.Id)
+            if (id != address.Id)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace DoorToDoor_Every_1.Controllers
             {
                 try
                 {
-                    _context.Update(followUp);
+                    _context.Update(address);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!FollowUpExists(followUp.Id))
+                    if (!AddressExists(address.Id))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace DoorToDoor_Every_1.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(followUp);
+            return View(address);
         }
 
-        // GET: FollowUps/Delete/5
+        // GET: Addresses/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +124,30 @@ namespace DoorToDoor_Every_1.Controllers
                 return NotFound();
             }
 
-            var followUp = await _context.FollowUps
+            var address = await _context.Addresses
                 .SingleOrDefaultAsync(m => m.Id == id);
-            if (followUp == null)
+            if (address == null)
             {
                 return NotFound();
             }
 
-            return View(followUp);
+            return View(address);
         }
 
-        // POST: FollowUps/Delete/5
+        // POST: Addresses/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var followUp = await _context.FollowUps.SingleOrDefaultAsync(m => m.Id == id);
-            _context.FollowUps.Remove(followUp);
+            var address = await _context.Addresses.SingleOrDefaultAsync(m => m.Id == id);
+            _context.Addresses.Remove(address);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool FollowUpExists(int id)
+        private bool AddressExists(int id)
         {
-            return _context.FollowUps.Any(e => e.Id == id);
+            return _context.Addresses.Any(e => e.Id == id);
         }
     }
 }
