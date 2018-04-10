@@ -13,25 +13,26 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Unit)
+                <label>Address</label>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.StreetNumber)
+                <label>Door Answered</label>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.StreetName)
+                <label>@Html.DisplayNameFor(model => model.Interested)</label>
+
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Suburb)
+                <label>@Html.DisplayNameFor(model => model.Notes)</label>
+
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.City)
+                <label>Date Visited</label>
+
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Country)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Postcode)
+                <label>Follow Up</label>
+
             </th>
             <th></th>
         </tr>
@@ -42,25 +43,27 @@
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Unit)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.StreetNumber)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StreetName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Suburb)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.City)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Country)
-                </td>
-                <td>
+                    @Html.DisplayFor(modelItem => item.StreetName),
+                    @Html.DisplayFor(modelItem => item.Suburb),
                     @Html.DisplayFor(modelItem => item.Postcode)
                 </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DoorAnswered)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Interested)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Visited)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FollowUp)
+                </td>
+
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |

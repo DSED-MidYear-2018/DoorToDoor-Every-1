@@ -32,5 +32,16 @@ namespace DoorToDoor_Every_1.Models
         [Required]
         public string Postcode { get; set; }
 
+        public bool DoorAnswered { get; set; }
+
+        public bool Interested { get; set; }
+
+        public string Notes { get; set; }
+
+        public DateTime Visited { get; set; }
+
+        public bool FollowUp { get; set; }
+
+
     }
 }
