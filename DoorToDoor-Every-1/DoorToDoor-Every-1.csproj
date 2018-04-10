@@ -6,6 +6,10 @@
     <RootNamespace>DoorToDoor_Every_1</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Properties\PublishProfiles\FolderProfile1.pubxml" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Font.Awesome" Version="5.0.9.1" />
