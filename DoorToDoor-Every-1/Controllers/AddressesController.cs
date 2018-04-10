@@ -54,13 +54,14 @@ namespace DoorToDoor_Every_1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Unit,StreetNumber,Suburb,City,Country,Postcode")] Address address)
+        public async Task<IActionResult> Create([Bind("Id,Unit,StreetNumber,StreetName,Suburb,City,Country,Postcode")] Address address)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(address);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Create", "Homes");
+                //https://forums.asp.net/t/1909349.aspx?Returning+view+that+is+in+different+folder
             }
             return View(address);
         }
@@ -86,7 +87,7 @@ namespace DoorToDoor_Every_1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Unit,StreetNumber,Suburb,City,Country,Postcode")] Address address)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Unit,StreetNumber,StreetName,Suburb,City,Country,Postcode")] Address address)
         {
             if (id != address.Id)
             {

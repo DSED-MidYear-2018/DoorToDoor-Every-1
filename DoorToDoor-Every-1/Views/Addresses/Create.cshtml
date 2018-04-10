@@ -4,7 +4,7 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
+<h1>Create</h1>
 
 <h4>Address</h4>
 <hr />
@@ -18,9 +18,14 @@
                 <span asp-validation-for="Unit" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="StreetNumber" class="control-label"></label>
+                <label asp-for="StreetNumber" class="control-label">Street Number</label>
                 <input asp-for="StreetNumber" class="form-control" />
                 <span asp-validation-for="StreetNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StreetName" class="control-label">Street Name</label>
+                <input asp-for="StreetName" class="form-control" />
+                <span asp-validation-for="StreetName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Suburb" class="control-label"></label>
@@ -43,7 +48,7 @@
                 <span asp-validation-for="Postcode" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Next" class="btn btn-default" />
             </div>
         </form>
     </div>
