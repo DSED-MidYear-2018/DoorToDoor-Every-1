@@ -20,6 +20,7 @@ namespace DoorToDoor_Every_1.Data
         public DbSet<Address> Addresses { get; set; }
         public DbSet<FollowUp> FollowUps { get; set; }
         public DbSet<Admin> Admins { get; set; }
+        public DbSet<AdminRole> AdminRole { get; set; }
 
 
         //https://docs.microsoft.com/en-us/ef/core/modeling/keys
@@ -44,7 +45,7 @@ namespace DoorToDoor_Every_1.Data
 
         //https://docs.microsoft.com/en-us/ef/core/modeling/keys
 
-        public DbSet<DoorToDoor_Every_1.Models.AdminRole> AdminRole { get; set; }
+
 
         //https://docs.microsoft.com/en-us/ef/core/modeling/keys
 

@@ -4,6 +4,8 @@
     ViewData["Title"] = "Create";
 }
 
+
+
 <h1>Create</h1>
 
 <h4>Address</h4>
@@ -47,6 +49,43 @@
                 <input asp-for="Postcode" class="form-control" />
                 <span asp-validation-for="Postcode" class="text-danger"></span>
             </div>
+
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <asp:Checkbox id="chkDoorAnswered" onchange="showHideDiv(this)" />
+                <label>
+                    <input asp-for="DoorAnswered" /> @Html.DisplayNameFor(model => model.DoorAnswered)
+                </label>
+            </div>
+            <div class="form-group" id="checkInterested">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Interested" /> @Html.DisplayNameFor(model => model.Interested)
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Notes" class="control-label"></label>
+                <input asp-for="Notes" class="form-control" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Visited" class="control-label"></label>
+                <input asp-for="Visited" class="form-control" />
+                <span asp-validation-for="Visited" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox" id="checkFollowUp">
+                    <label>
+                        <input asp-for="FollowUp" /> @Html.DisplayNameFor(model => model.FollowUp)
+                    </label>
+                </div>
+            </div>
+
+
+
             <div class="form-group">
                 <input type="submit" value="Next" class="btn btn-default" />
             </div>
@@ -61,3 +100,22 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+
+<script type="text/javascript">
+    function showHideDiv(chkDoorAnswered) {
+        //var interest = document.getElementById("checkInterested");
+        if (chkDoorAnswered.Checked == true) {
+            document.getElementById('checkInterested').style.display = "";
+        }
+        if (!chkDoorAnswered.Checked) {
+            document.getElementById('checkInterested').style.display = "none";
+        }
+        //interest.style.display = checkedInterest.checked ? "block" : "none";
+    }
+
+    document.getElementById('checkInterested').style.display = "none";
+    document.getElementById('checkFollowUp').style.display = "none";
+
+    //$document.getElementById(checkInterested).style.display = "none";
+</script>
