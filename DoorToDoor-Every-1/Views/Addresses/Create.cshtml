@@ -67,7 +67,7 @@
             @* Date Visited *@
             <div class="form-group">
                 <label asp-for="Visited" class="control-label"></label>
-                <input asp-for="Visited" value="@DateTime.Now.ToString("dd/mm/yyyy hh:mm")" data-date-format="hh:mm dd/mm/yyyy" class="form-control" />
+                <input asp-for="Visited" value="@DateTime.Now.ToString("dd/MM/yyyy hh:mm")" data-date-format="dd/mm/yyyy hh:mm" class="form-control" />
                 <span asp-validation-for="Visited" class="text-danger"></span>
             </div>
 
@@ -146,14 +146,14 @@
         document.getElementById('checkInterested').style.display = "none";
         document.getElementById('chkFollowUp').style.display = "none";
 
-                                                                                                                    //$(document).ready(function () {
-                                                                                                                    //    $(".currentdatetime").datetimepicker({
-                                                                                                                    //        format: 'DD-MM-YYYY HH:MM',
-                                                                                                                    //        inline: true,
-                                                                                                                    //        sideBySide: true,
-                                                                                                                    //        toolbarPlacement: 'bottom'
-                                                                                                                    //    });
-                                                                                                                    //});
+                                                                                                                            //$(document).ready(function () {
+                                                                                                                            //    $(".currentdatetime").datetimepicker({
+                                                                                                                            //        format: 'DD-MM-YYYY HH:MM',
+                                                                                                                            //        inline: true,
+                                                                                                                            //        sideBySide: true,
+                                                                                                                            //        toolbarPlacement: 'bottom'
+                                                                                                                            //    });
+                                                                                                                            //});
 
 
     </script>
