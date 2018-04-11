@@ -24,6 +24,7 @@ main,
 menu,
 nav,
 section,
+
 summary {
   display: block;
 }
@@ -33,6 +34,14 @@ progress,
 video {
   display: inline-block;
   vertical-align: baseline;
+}
+
+blockarea {
+
+    display: block;
+    background-color: black;
+    opacity: 0.4;
+
 }
 audio:not([controls]) {
   display: none;
