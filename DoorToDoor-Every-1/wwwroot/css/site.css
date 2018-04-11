@@ -52,3 +52,9 @@ UL.nav > LI:hover UL {
     left: 0;
     top: 24px; /* IE7 has problems without this */
 }
+
+
+.table {
+    background-color: white;
+    opacity: 0.8;
+}
