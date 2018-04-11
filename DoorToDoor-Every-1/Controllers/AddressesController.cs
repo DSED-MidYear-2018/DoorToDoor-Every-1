@@ -35,6 +35,7 @@ namespace DoorToDoor_Every_1.Controllers
 
             var address = await _context.Addresses
                 .SingleOrDefaultAsync(m => m.Id == id);
+            Ids.AddressId = (int)id;
             if (address == null)
             {
                 return NotFound();
@@ -60,6 +61,8 @@ namespace DoorToDoor_Every_1.Controllers
             {
                 _context.Add(address);
                 await _context.SaveChangesAsync();
+
+                //redirects you to details/3 for example
                 return RedirectToAction("Details", new { address.Id });
                 //https://forums.asp.net/t/1909349.aspx?Returning+view+that+is+in+different+folder
             }
