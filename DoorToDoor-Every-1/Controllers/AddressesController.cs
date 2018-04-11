@@ -60,11 +60,17 @@ namespace DoorToDoor_Every_1.Controllers
             {
                 _context.Add(address);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Create", "Contacts");
+                return RedirectToAction("Details", new { address.Id });
                 //https://forums.asp.net/t/1909349.aspx?Returning+view+that+is+in+different+folder
             }
             return View(address);
         }
+
+        //public ActionResult Details(int addressId)
+        //{
+        //    var details = GetAddressDetails(addressId); //load details
+        //    return View(details);
+        //}
 
         // GET: Addresses/Edit/5
         public async Task<IActionResult> Edit(int? id)
