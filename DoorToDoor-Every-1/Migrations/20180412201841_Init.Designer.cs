@@ -11,8 +11,8 @@ using System;
 namespace DoorToDoor_Every_1.Migrations
 {
     [DbContext(typeof(DoorContext))]
-    [Migration("20180412050535_Two")]
-    partial class Two
+    [Migration("20180412201841_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

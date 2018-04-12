@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20180412040625_Init.cs" />
+    <Compile Remove="Migrations\20180412040625_Init.Designer.cs" />
+    <Compile Remove="Migrations\20180412050535_Two.cs" />
+    <Compile Remove="Migrations\20180412050535_Two.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Properties\PublishProfiles\FolderProfile1.pubxml" />
   </ItemGroup>
 

@@ -64,10 +64,10 @@ namespace DoorToDoor_Every_1.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    AddressId = table.Column<int>(nullable: false),
+                    AddressId = table.Column<int>(nullable: true),
                     Email = table.Column<string>(nullable: true),
-                    FirstName = table.Column<string>(nullable: true),
-                    LastName = table.Column<string>(nullable: true),
+                    FirstName = table.Column<string>(nullable: false),
+                    LastName = table.Column<string>(nullable: false),
                     Phone = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -78,7 +78,7 @@ namespace DoorToDoor_Every_1.Migrations
                         column: x => x.AddressId,
                         principalTable: "Addresses",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
