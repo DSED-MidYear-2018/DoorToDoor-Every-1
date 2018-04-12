@@ -25,11 +25,6 @@ namespace DoorToDoor_Every_1.Models
         [EmailAddress]
         public string Email { get; set; }
 
-        //Foreign Key
-        [Display(Name = "Address")]
-        public static int AddressId { get; set; }
-
-        [ForeignKey("AddressId")]
-        public virtual Address Addresses { get; set; }
+        public int AddressId { get; set; }
     }
 }

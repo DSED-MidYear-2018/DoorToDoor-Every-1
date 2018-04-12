@@ -14,6 +14,7 @@ namespace DoorToDoor_Every_1.Controllers
     public class ContactsController : Controller
     {
         private readonly DoorContext _context;
+        private int addressId = DatabaseManager.AddressId;
 
         public ContactsController(DoorContext context)
         {
@@ -48,6 +49,7 @@ namespace DoorToDoor_Every_1.Controllers
         public IActionResult Create()
         {
             return View();
+
         }
 
         // POST: Contacts1/Create
@@ -57,9 +59,10 @@ namespace DoorToDoor_Every_1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,Phone,Email,AddressId")] Contact contact)
         {
-            Contact.AddressId = DatabaseManager.AddressId;
+
             if (ModelState.IsValid)
             {
+                //Contact.AddressId = addressId;
                 _context.Add(contact);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

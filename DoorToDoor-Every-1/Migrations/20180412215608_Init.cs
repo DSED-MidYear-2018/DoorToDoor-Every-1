@@ -46,6 +46,23 @@ namespace DoorToDoor_Every_1.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Contacts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    AddressId = table.Column<int>(nullable: false),
+                    Email = table.Column<string>(nullable: true),
+                    FirstName = table.Column<string>(nullable: false),
+                    LastName = table.Column<string>(nullable: false),
+                    Phone = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Contacts", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Occurances",
                 columns: table => new
                 {
@@ -56,29 +73,6 @@ namespace DoorToDoor_Every_1.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Occurances", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Contacts",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    AddressId = table.Column<int>(nullable: true),
-                    Email = table.Column<string>(nullable: true),
-                    FirstName = table.Column<string>(nullable: false),
-                    LastName = table.Column<string>(nullable: false),
-                    Phone = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Contacts", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Contacts_Addresses_AddressId",
-                        column: x => x.AddressId,
-                        principalTable: "Addresses",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -136,11 +130,6 @@ namespace DoorToDoor_Every_1.Migrations
                 name: "IX_Admins_AdminRoleId",
                 table: "Admins",
                 column: "AdminRoleId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Contacts_AddressId",
-                table: "Contacts",
-                column: "AddressId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_FollowUps_AddressId",

@@ -97,7 +97,7 @@ namespace DoorToDoor_Every_1.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("AddressId");
+                    b.Property<int>("AddressId");
 
                     b.Property<string>("Email");
 
@@ -110,8 +110,6 @@ namespace DoorToDoor_Every_1.Migrations
                     b.Property<string>("Phone");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AddressId");
 
                     b.ToTable("Contacts");
                 });
@@ -156,13 +154,6 @@ namespace DoorToDoor_Every_1.Migrations
                         .WithMany()
                         .HasForeignKey("AdminRoleId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("DoorToDoor_Every_1.Models.Contact", b =>
-                {
-                    b.HasOne("DoorToDoor_Every_1.Models.Address", "Addresses")
-                        .WithMany()
-                        .HasForeignKey("AddressId");
                 });
 
             modelBuilder.Entity("DoorToDoor_Every_1.Models.FollowUp", b =>
