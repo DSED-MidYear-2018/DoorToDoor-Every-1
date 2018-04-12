@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DoorToDoor_Every_1.Data;
 using DoorToDoor_Every_1.Models;
+using DoorToDoor_Every_1.Operations;
+using Microsoft.EntityFrameworkCore.Extensions.Internal;
 
 namespace DoorToDoor_Every_1.Controllers
 {
@@ -35,7 +37,8 @@ namespace DoorToDoor_Every_1.Controllers
 
             var address = await _context.Addresses
                 .SingleOrDefaultAsync(m => m.Id == id);
-            Ids.AddressId = (int)id;
+            DatabaseManager.AddressId = (int)id;
+            FindAddress(id);
             if (address == null)
             {
                 return NotFound();
@@ -158,6 +161,26 @@ namespace DoorToDoor_Every_1.Controllers
         private bool AddressExists(int id)
         {
             return _context.Addresses.Any(e => e.Id == id);
+        }
+
+        public void FindAddress(int? id)
+        {
+            if (id == null)
+            {
+                //return ControllerBase.NotFound();
+            }
+
+            //
+            Address address = _context.Addresses.SingleOrDefault(m => m.Id == DatabaseManager.AddressId);
+            string unit = address.Unit;
+            string number = address.StreetNumber.ToString();
+            string name = address.StreetName;
+            string suburb = address.Suburb;
+            string city = address.City;
+            string country = address.Country;
+            string postcode = address.Postcode;
+
+            DatabaseManager.Address = (unit + " " + number + " " + name + ", " + suburb + ", " + city + ", " + country + " " + postcode);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,12 +14,18 @@ namespace DoorToDoor_Every_1.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-       
+
 
         //[Display(Name = "Remember me?")]
         //public bool RememberMe { get; set; }
 
-        public List<AdminRole> AdminRoles { get; set; }
+
+        //Foreign Key
+        [Display(Name = "AdminRole")]
+        public int AdminRoleId { get; set; }
+
+        [ForeignKey("AdminRoleId")]
+        public virtual AdminRole AdminRoles { get; set; }
 
         //[Required]
         //[EmailAddress]

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DoorToDoor_Every_1.Data;
 using DoorToDoor_Every_1.Models;
+using DoorToDoor_Every_1.Operations;
 
 namespace DoorToDoor_Every_1.Controllers
 {
@@ -149,5 +150,7 @@ namespace DoorToDoor_Every_1.Controllers
         {
             return _context.Contacts.Any(e => e.Id == id);
         }
+
+
     }
 }

@@ -1,22 +1,24 @@
-﻿@model DoorToDoor_Every_1.Models.Contact
+﻿@using DoorToDoor_Every_1.Operations
+@model DoorToDoor_Every_1.Models.Contact
 
 @{
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
+<h1>Create</h1>
 
-<h4>Contact</h4>
+<h4>Contact for address</h4>
+<h5>@DatabaseManager.Address</h5>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Homes" class="control-label">Address</label>
-                <input asp-for="Homes" class="form-control" />
-                <span asp-validation-for="Homes" class="text-danger"></span>
-            </div>
+            @*<div class="form-group">
+                    <label asp-for="Addresses" class="control-label">Address</label>
+                    <input asp-for="Addresses" class="form-control" />
+                    <span asp-validation-for="Addresses" class="text-danger"></span>
+                </div>*@
             <div class="form-group">
                 <label asp-for="FirstName" class="control-label"></label>
                 <input asp-for="FirstName" class="form-control" />
