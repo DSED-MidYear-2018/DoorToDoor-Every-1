@@ -55,8 +55,9 @@ namespace DoorToDoor_Every_1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,Phone,Email")] Contact contact)
+        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,Phone,Email,AddressId")] Contact contact)
         {
+            Contact.AddressId = DatabaseManager.AddressId;
             if (ModelState.IsValid)
             {
                 _context.Add(contact);
@@ -87,7 +88,7 @@ namespace DoorToDoor_Every_1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,Phone,Email")] Contact contact)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,Phone,Email,AddressId")] Contact contact)
         {
             if (id != contact.Id)
             {

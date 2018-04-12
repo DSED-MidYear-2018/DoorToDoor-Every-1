@@ -124,7 +124,7 @@ namespace DoorToDoor_Every_1.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Details", new { address.Id });
             }
             return View(address);
         }

@@ -10,20 +10,24 @@ namespace DoorToDoor_Every_1.Models
 {
     public class Contact
     {
-
+        [Required]
         public int Id { get; set; }
 
+        [Required]
         public string FirstName { get; set; }
 
+        [Required]
         public string LastName { get; set; }
 
+        [Phone]
         public string Phone { get; set; }
 
+        [EmailAddress]
         public string Email { get; set; }
 
         //Foreign Key
         [Display(Name = "Address")]
-        public int AddressId { get; set; }
+        public static int AddressId { get; set; }
 
         [ForeignKey("AddressId")]
         public virtual Address Addresses { get; set; }

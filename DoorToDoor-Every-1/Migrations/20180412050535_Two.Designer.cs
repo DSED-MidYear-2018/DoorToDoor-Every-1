@@ -11,9 +11,10 @@ using System;
 namespace DoorToDoor_Every_1.Migrations
 {
     [DbContext(typeof(DoorContext))]
-    partial class DoorContextModelSnapshot : ModelSnapshot
+    [Migration("20180412050535_Two")]
+    partial class Two
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
