@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DoorToDoor_Every_1.Data;
+using DoorToDoor_Every_1.DTO;
 using DoorToDoor_Every_1.Models;
 using DoorToDoor_Every_1.Operations;
 using Microsoft.EntityFrameworkCore.Extensions.Internal;
@@ -181,6 +182,24 @@ namespace DoorToDoor_Every_1.Controllers
             string postcode = address.Postcode;
 
             DatabaseManager.Address = (unit + " " + number + " " + name + ", " + suburb + ", " + city + ", " + country + " " + postcode);
+            AddAddressDetailsToDTO(id);
+        }
+
+        private void AddAddressDetailsToDTO(int? id)
+        {
+            Address address = _context.Addresses.SingleOrDefault(m => m.Id == DatabaseManager.AddressId);
+            AddressContactDTO.Unit = address.Unit;
+            AddressContactDTO.StreetNumber = address.StreetNumber;
+            AddressContactDTO.StreetName = address.StreetName;
+            AddressContactDTO.Suburb = address.Suburb;
+            AddressContactDTO.City = address.City;
+            AddressContactDTO.Country = address.Country;
+            AddressContactDTO.Postcode = address.Postcode;
+            AddressContactDTO.DoorAnswered = address.DoorAnswered;
+            AddressContactDTO.Interested = address.Interested;
+            AddressContactDTO.Notes = address.Notes;
+            AddressContactDTO.FollowUp = address.FollowUp;
+            AddressContactDTO.Visited = address.Visited;
         }
     }
 }
