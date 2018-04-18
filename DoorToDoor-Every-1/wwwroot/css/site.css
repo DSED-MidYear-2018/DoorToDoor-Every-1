@@ -1,11 +1,23 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-image: url("../images/harvestbackground.jpeg");
+    background-image: url("../images/homepagenewimage.jpg");
     background-repeat: no-repeat;
     background-position: left top;
     background-attachment: fixed;
     background-size: cover;
+
+}
+
+
+
+#backgroundimage {
+    background-image: url("../images/homepagenewimage.jpg") linear-gradient(transparant, black);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-attachment: fixed;
+    background-size: cover;
+    
 }
 
 /* Wrapping element */
@@ -52,3 +64,82 @@ UL.nav > LI:hover UL {
     left: 0;
     top: 24px; /* IE7 has problems without this */
 }
+
+.table {
+
+    background-color: white;
+    opacity: 0.8;
+
+}
+
+
+#sectioncolour {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+   
+
+}
+
+.formcolour 
+ 
+
+{
+
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    opacity: 0.8;
+}
+
+a {
+
+    color: white;
+}
+
+a:hover {
+
+    color:white;
+}
+
+
+
+form {
+    /*background-color: darkgrey;
+    opacity: 0.9;*/
+    padding: 5px;
+    border-radius: 2px;
+    font: black;
+    line-height: 22px;
+    
+
+}
+
+
+
+.whitetext {
+    color:white;
+}
+
+
+.form-design {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box ;
+    border: 2px solid black;
+    border-radius: 4px;
+    color: transparent;
+    background-color: transparent;
+    
+}
+
+
+
+
