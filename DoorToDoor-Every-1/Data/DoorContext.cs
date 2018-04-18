@@ -14,7 +14,6 @@ namespace DoorToDoor_Every_1.Data
         {
         }
 
-        public DbSet<Home> Homes { get; set; }
         public DbSet<Occurance> Occurances { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Address> Addresses { get; set; }
@@ -27,9 +26,6 @@ namespace DoorToDoor_Every_1.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //set the primary key of the tables
-            modelBuilder.Entity<Home>()
-                .HasKey(c => c.Id);
             modelBuilder.Entity<Occurance>()
                 .HasKey(c => c.Id);
             modelBuilder.Entity<Contact>()

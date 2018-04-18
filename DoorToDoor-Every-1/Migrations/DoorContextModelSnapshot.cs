@@ -63,6 +63,8 @@ namespace DoorToDoor_Every_1.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int>("AdminRoleId");
+
                     b.Property<string>("Email");
 
                     b.Property<string>("FirstName");
@@ -71,9 +73,9 @@ namespace DoorToDoor_Every_1.Migrations
 
                     b.Property<string>("Password");
 
-                    b.Property<bool>("RememberMe");
-
                     b.HasKey("Id");
+
+                    b.HasIndex("AdminRoleId");
 
                     b.ToTable("Admins");
                 });
@@ -83,13 +85,9 @@ namespace DoorToDoor_Every_1.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("AdminId");
-
                     b.Property<string>("Role");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AdminId");
 
                     b.ToTable("AdminRole");
                 });
@@ -99,11 +97,15 @@ namespace DoorToDoor_Every_1.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int>("AddressId");
+
                     b.Property<string>("Email");
 
-                    b.Property<string>("FirstName");
+                    b.Property<string>("FirstName")
+                        .IsRequired();
 
-                    b.Property<string>("LastName");
+                    b.Property<string>("LastName")
+                        .IsRequired();
 
                     b.Property<string>("Phone");
 
@@ -117,82 +119,54 @@ namespace DoorToDoor_Every_1.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int>("AddressId");
+
                     b.Property<string>("DateReturn");
+
+                    b.Property<int>("OccuranceId");
 
                     b.Property<string>("TimeReturn");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("AddressId");
+
+                    b.HasIndex("OccuranceId");
+
                     b.ToTable("FollowUps");
-                });
-
-            modelBuilder.Entity("DoorToDoor_Every_1.Models.Home", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int?>("ContactId");
-
-                    b.Property<bool>("DoorAnswered");
-
-                    b.Property<bool>("FollowUp");
-
-                    b.Property<int?>("FollowUpId");
-
-                    b.Property<bool>("Interested");
-
-                    b.Property<string>("Notes");
-
-                    b.Property<DateTime>("Visited");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ContactId");
-
-                    b.HasIndex("FollowUpId");
-
-                    b.ToTable("Homes");
                 });
 
             modelBuilder.Entity("DoorToDoor_Every_1.Models.Occurance", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<int?>("FollowUpId");
 
                     b.Property<string>("Title");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FollowUpId");
-
                     b.ToTable("Occurances");
                 });
 
-            modelBuilder.Entity("DoorToDoor_Every_1.Models.AdminRole", b =>
+            modelBuilder.Entity("DoorToDoor_Every_1.Models.Admin", b =>
                 {
-                    b.HasOne("DoorToDoor_Every_1.Models.Admin")
-                        .WithMany("AdminRoles")
-                        .HasForeignKey("AdminId");
+                    b.HasOne("DoorToDoor_Every_1.Models.AdminRole", "AdminRoles")
+                        .WithMany()
+                        .HasForeignKey("AdminRoleId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("DoorToDoor_Every_1.Models.Home", b =>
+            modelBuilder.Entity("DoorToDoor_Every_1.Models.FollowUp", b =>
                 {
-                    b.HasOne("DoorToDoor_Every_1.Models.Contact")
-                        .WithMany("Homes")
-                        .HasForeignKey("ContactId");
+                    b.HasOne("DoorToDoor_Every_1.Models.Address", "Addresses")
+                        .WithMany()
+                        .HasForeignKey("AddressId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("DoorToDoor_Every_1.Models.FollowUp")
-                        .WithMany("Homes")
-                        .HasForeignKey("FollowUpId");
-                });
-
-            modelBuilder.Entity("DoorToDoor_Every_1.Models.Occurance", b =>
-                {
-                    b.HasOne("DoorToDoor_Every_1.Models.FollowUp")
-                        .WithMany("Occurances")
-                        .HasForeignKey("FollowUpId");
+                    b.HasOne("DoorToDoor_Every_1.Models.Occurance", "Occurances")
+                        .WithMany()
+                        .HasForeignKey("OccuranceId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }
