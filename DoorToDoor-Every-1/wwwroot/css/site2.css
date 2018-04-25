@@ -1,7 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-image: url("../images/cat.jpg");
+    background-image: url("../images/homepageimagenewversion.png");
     background-repeat: no-repeat;
     background-position: left top;
     background-attachment: fixed;
@@ -58,3 +58,8 @@ UL.nav > LI:hover UL {
     background-color: green;
     opacity: 0.8;
 }
+
+
+
+
+

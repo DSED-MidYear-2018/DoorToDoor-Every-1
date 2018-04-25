@@ -122,24 +122,40 @@ form {
 }
 
 
+.form-group {
+    padding-top: 15px;
+}
 
 .whitetext {
     color:white;
 }
 
 
-.form-design {
+/*.form-design {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box ;
     border: 2px solid black;
     border-radius: 4px;
-    color: transparent;
-    background-color: transparent;
+    color: white;
+  
     
+    
+}*/
+
+
+.colouredtext {
+    color: #fe8a00;
 }
 
 
+.btn-default:hover {
+    background-color: #fe8a00;
+    border-color: white;
+    color: white;
+}
 
-
+.label {
+    color: #fe8a00;
+}
