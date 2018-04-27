@@ -24,10 +24,13 @@ namespace DoorToDoor_Every_1.Models.AccountViewModels
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-       
+        public int Role { get; set; }
 
-       
+
+
+        
     }
 
-    
+
+
 }
