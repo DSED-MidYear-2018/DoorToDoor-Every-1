@@ -6,8 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DoorToDoor_Every_1.Data;
-using DoorToDoor_Every_1.Models;
 using DoorToDoor_Every_1.Operations;
+using Microsoft.Azure.KeyVault.Models;
+using Contact = DoorToDoor_Every_1.Models.Contact;
 
 namespace DoorToDoor_Every_1.Controllers
 {
@@ -153,6 +154,25 @@ namespace DoorToDoor_Every_1.Controllers
         private bool ContactExists(int id)
         {
             return _context.Contacts.Any(e => e.Id == id);
+        }
+
+        public void FindContact(int? id)
+        {
+            if (id == null)
+            {
+                //return ControllerBase.NotFound();
+            }
+
+
+            while (id == DatabaseManager.ContactId)
+            {
+                Contact contactdetails = _context.Contacts.SingleOrDefault(c => c.Id == DatabaseManager.ContactId);
+                string fname = contactdetails.FirstName;
+                string lname = contactdetails.LastName;
+
+                DatabaseManager.ContactDetailsList = new List<string> { fname + " " + lname };
+            }
+
         }
 
 
