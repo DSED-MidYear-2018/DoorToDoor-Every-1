@@ -7,7 +7,12 @@
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
+        
+
+        <link href="@Url.Content("~/css/site.css")" rel="stylesheet" />
+        @RenderSection("css", false)
+
+
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -37,12 +42,12 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li>
                         <a asp-area="" asp-controller="Home" asp-action="ContactMenu">Contact</a>
-                        <ul>
-                            <li><a asp-area="" asp-controller="ContactMenu" asp-action="Interested">Interested</a></li>
-                            <li><a asp-area="" asp-controller="ContactMenu" asp-action="NotInterested">Not Interested</a></li>
-                            <li><a asp-area="" asp-controller="ContactMenu" asp-action="NotHome">Not Home</a></li>
-                            <li><a asp-area="" asp-controller="ContactMenu" asp-action="FollowUp">Follow Up</a></li>
-                        </ul>
+                        <!--  <ul>
+          <li><a asp-area="" asp-controller="ContactMenu" asp-action="Interested">Interested</a></li>
+          <li><a asp-area="" asp-controller="ContactMenu" asp-action="NotInterested">Not Interested</a></li>
+          <li><a asp-area="" asp-controller="ContactMenu" asp-action="NotHome">Not Home</a></li>
+          <li><a asp-area="" asp-controller="ContactMenu" asp-action="FollowUp">Follow Up</a></li>
+      </ul> -->
                     </li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Admin">Admin</a></li>
                     <li><a asp-area="" asp-controller="Addresses" asp-action="Create">Create New Address</a></li>
