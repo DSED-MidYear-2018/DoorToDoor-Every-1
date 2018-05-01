@@ -52,7 +52,7 @@ namespace DoorToDoor_Every_1
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider services)
         {
             if (env.IsDevelopment())
             {
@@ -75,8 +75,10 @@ namespace DoorToDoor_Every_1
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-        }
 
+            CreateUserRoles(services).Wait();
+
+        }
         private async Task CreateUserRoles(IServiceProvider serviceProvider)
         {
             var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
