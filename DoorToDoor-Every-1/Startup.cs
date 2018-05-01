@@ -47,7 +47,6 @@ namespace DoorToDoor_Every_1
                 options.Password.RequireLowercase = false;
                 options.Password.RequireDigit = false;
                 options.Password.RequireNonAlphanumeric = false;
-
                 options.Password.RequireUppercase = false;
             });
         }
