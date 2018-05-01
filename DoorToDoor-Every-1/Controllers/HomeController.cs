@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using DoorToDoor_Every_1.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DoorToDoor_Every_1.Controllers
 {
@@ -20,6 +21,7 @@ namespace DoorToDoor_Every_1.Controllers
             return View();
         }
 
+      
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
@@ -27,6 +29,9 @@ namespace DoorToDoor_Every_1.Controllers
             return View();
         }
 
+        
+
+       
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

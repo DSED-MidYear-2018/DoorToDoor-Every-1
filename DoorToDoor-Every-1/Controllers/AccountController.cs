@@ -241,6 +241,8 @@ namespace DoorToDoor_Every_1.Controllers
             return View(model);
         }
 
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
@@ -436,6 +438,7 @@ namespace DoorToDoor_Every_1.Controllers
         {
             return View();
         }
+
 
         #region Helpers
 

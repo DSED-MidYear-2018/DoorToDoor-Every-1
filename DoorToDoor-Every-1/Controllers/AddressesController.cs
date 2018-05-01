@@ -10,11 +10,16 @@ using DoorToDoor_Every_1.DTO;
 using DoorToDoor_Every_1.Models;
 using DoorToDoor_Every_1.Operations;
 using Microsoft.EntityFrameworkCore.Extensions.Internal;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DoorToDoor_Every_1.Controllers
 {
+
+    
     public class AddressesController : Controller
     {
+
+  
         private readonly DoorContext _context;
 
         public AddressesController(DoorContext context)
@@ -49,10 +54,18 @@ namespace DoorToDoor_Every_1.Controllers
         }
 
         // GET: Addresses/Create
+
+
+            //DELETE AUTHORIZE
+
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
         }
+
+        [Authorize]
+
 
         // POST: Addresses/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
