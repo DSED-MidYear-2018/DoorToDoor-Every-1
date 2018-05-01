@@ -56,15 +56,15 @@ namespace DoorToDoor_Every_1.Controllers
         // GET: Addresses/Create
 
 
-            //DELETE AUTHORIZE
+            
 
-        [Authorize(Roles = "Admin")]
+   
         public IActionResult Create()
         {
             return View();
         }
 
-        [Authorize]
+   
 
 
         // POST: Addresses/Create
