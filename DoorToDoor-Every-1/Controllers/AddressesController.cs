@@ -73,12 +73,6 @@ namespace DoorToDoor_Every_1.Controllers
             return View(address);
         }
 
-        //public ActionResult Details(int addressId)
-        //{
-        //    var details = GetAddressDetails(addressId); //load details
-        //    return View(details);
-        //}
-
         // GET: Addresses/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -182,24 +176,6 @@ namespace DoorToDoor_Every_1.Controllers
             string postcode = address.Postcode;
 
             DatabaseManager.Address = (unit + " " + number + " " + name + ", " + suburb + ", " + city + ", " + country + " " + postcode);
-            AddAddressDetailsToDTO(id);
-        }
-
-        private void AddAddressDetailsToDTO(int? id)
-        {
-            Address address = _context.Addresses.SingleOrDefault(m => m.Id == DatabaseManager.AddressId);
-            AddressContactDTO.Unit = address.Unit;
-            AddressContactDTO.StreetNumber = address.StreetNumber;
-            AddressContactDTO.StreetName = address.StreetName;
-            AddressContactDTO.Suburb = address.Suburb;
-            AddressContactDTO.City = address.City;
-            AddressContactDTO.Country = address.Country;
-            AddressContactDTO.Postcode = address.Postcode;
-            AddressContactDTO.DoorAnswered = address.DoorAnswered;
-            AddressContactDTO.Interested = address.Interested;
-            AddressContactDTO.Notes = address.Notes;
-            AddressContactDTO.FollowUp = address.FollowUp;
-            AddressContactDTO.Visited = address.Visited;
         }
     }
 }

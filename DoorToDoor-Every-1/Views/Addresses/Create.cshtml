@@ -6,118 +6,120 @@
 }
 
 
-
-<h1>Create</h1>
-
-<h4>Address</h4>
-<hr />
-<div class="row">
-    <div class="col-md-12">
-        <form asp-action="Create" id="table">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            @* Unit *@
-            <div class="form-group">
-                <label asp-for="Unit" class="control-label"></label>
-                <input asp-for="Unit" class="form-control" />
-                <span asp-validation-for="Unit" class="text-danger"></span>
-            </div>
-
-            @* Street Number *@
-            <div class="form-group">
-                <label asp-for="StreetNumber" class="control-label">Street Number</label>
-                <input asp-for="StreetNumber" class="form-control" />
-                <span asp-validation-for="StreetNumber" class="text-danger"></span>
-            </div>
-
-            @* Street Name *@
-            <div class="form-group">
-                <label asp-for="StreetName" class="control-label">Street Name</label>
-                <input asp-for="StreetName" class="form-control" />
-                <span asp-validation-for="StreetName" class="text-danger"></span>
-            </div>
-
-            @* Suburb *@
-            <div class="form-group">
-                <label asp-for="Suburb" class="control-label"></label>
-                <input asp-for="Suburb" class="form-control" />
-                <span asp-validation-for="Suburb" class="text-danger"></span>
-            </div>
-
-            @* City *@
-            <div class="form-group">
-                <label asp-for="City" class="control-label"></label>
-                <input asp-for="City" class="form-control" />
-                <span asp-validation-for="City" class="text-danger"></span>
-            </div>
-
-            @* Country *@
-            <div class="form-group">
-                <label asp-for="Country" class="control-label"></label>
-                <input asp-for="Country" class="form-control" />
-                <span asp-validation-for="Country" class="text-danger"></span>
-            </div>
-
-            @* Postcode *@
-            <div class="form-group">
-                <label asp-for="Postcode" class="control-label"></label>
-                <input asp-for="Postcode" class="form-control" />
-                <span asp-validation-for="Postcode" class="text-danger"></span>
-            </div>
-
-            @* Date Visited *@
-            <div class="form-group">
-                <label asp-for="Visited" class="control-label"></label>
-                <input asp-for="Visited" value="@DateTime.Now.ToString("dd/MM/yyyy hh:mm")" data-date-format="dd/mm/yyyy hh:mm" class="form-control" />
-                <span asp-validation-for="Visited" class="text-danger"></span>
-            </div>
-
-            @* Door Answered *@
-            <div class="form-group">
-                <div>
-                    <label class="control-label">Door Answered</label>
-                    <input type="checkbox" asp-for="DoorAnswered" onClick="doorAnswered()" id="chkDoorAnswered" />
-                    <span asp-validation-for="DoorAnswered" class="text-danger"></span>
-                </div>
-            </div>
-
-            @* Check if Interested *@
-            <div class="form-group" id="checkInterested">
-                <div>
-                    <label>
-                        <label class="control-label">Interested</label>
-                        <input type="checkbox" asp-for="Interested" onClick="interested()" id="chkInterested" />
-                        <span asp-validation-for="Interested" class="text-danger"></span>
-                    </label>
-                </div>
-            </div>
-
-            @* Notes about address etc *@
-            <div class="form-group">
-                <label asp-for="Notes" class="control-label"></label>
-                <input asp-for="Notes" class="form-control" />
-                <span asp-validation-for="Notes" class="text-danger"></span>
-            </div>
-
-            @* Check if follow up needed *@
-            <div class="form-group" id="chkFollowUp">
-                <div>
-                    <label>
-                        <label class="control-label">Follow Up</label>
-                        <input type="checkbox" asp-for="FollowUp" />
-                        <span asp-validation-for="FollowUp" class="text-danger"></span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <input type="submit" value="Next" class="btn btn-default" />
-            </div>
-        </form>
-    </div>
+<div class="details">
+    <h1>Create</h1>
 </div>
+<div class="details">
+    <h2>Address</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="Create" id="table">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @* Unit *@
+                <div class="form-group">
+                    <label asp-for="Unit" class="control-label"></label>
+                    <input asp-for="Unit" class="form-control" />
+                    <span asp-validation-for="Unit" class="text-danger"></span>
+                </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+                @* Street Number *@
+                <div class="form-group">
+                    <label asp-for="StreetNumber" class="control-label">Street Number</label>
+                    <input asp-for="StreetNumber" class="form-control" />
+                    <span asp-validation-for="StreetNumber" class="text-danger"></span>
+                </div>
+
+                @* Street Name *@
+                <div class="form-group">
+                    <label asp-for="StreetName" class="control-label">Street Name</label>
+                    <input asp-for="StreetName" class="form-control" />
+                    <span asp-validation-for="StreetName" class="text-danger"></span>
+                </div>
+
+                @* Suburb *@
+                <div class="form-group">
+                    <label asp-for="Suburb" class="control-label"></label>
+                    <input asp-for="Suburb" class="form-control" />
+                    <span asp-validation-for="Suburb" class="text-danger"></span>
+                </div>
+
+                @* City *@
+                <div class="form-group">
+                    <label asp-for="City" class="control-label"></label>
+                    <input asp-for="City" class="form-control" />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+
+                @* Country *@
+                <div class="form-group">
+                    <label asp-for="Country" class="control-label"></label>
+                    <input asp-for="Country" class="form-control" />
+                    <span asp-validation-for="Country" class="text-danger"></span>
+                </div>
+
+                @* Postcode *@
+                <div class="form-group">
+                    <label asp-for="Postcode" class="control-label"></label>
+                    <input asp-for="Postcode" class="form-control" />
+                    <span asp-validation-for="Postcode" class="text-danger"></span>
+                </div>
+
+                @* Date Visited *@
+                <div class="form-group">
+                    <label asp-for="Visited" class="control-label"></label>
+                    <input asp-for="Visited" value="@DateTime.Now.ToString("dd/MM/yyyy hh:mm")" data-date-format="dd/mm/yyyy hh:mm" class="form-control" />
+                    <span asp-validation-for="Visited" class="text-danger"></span>
+                </div>
+
+                @* Door Answered *@
+                <div class="form-group">
+                    <div>
+                        <label class="control-label">Door Answered</label>
+                        <input type="checkbox" asp-for="DoorAnswered" onClick="doorAnswered()" id="chkDoorAnswered" />
+                        <span asp-validation-for="DoorAnswered" class="text-danger"></span>
+                    </div>
+                </div>
+
+                @* Check if Interested *@
+                <div class="form-group" id="checkInterested">
+                    <div>
+                        <label>
+                            <label class="control-label">Interested</label>
+                            <input type="checkbox" asp-for="Interested" onClick="interested()" id="chkInterested" />
+                            <span asp-validation-for="Interested" class="text-danger"></span>
+                        </label>
+                    </div>
+                </div>
+
+                @* Notes about address etc *@
+                <div class="form-group">
+                    <label asp-for="Notes" class="control-label"></label>
+                    <input asp-for="Notes" class="form-control" />
+                    <span asp-validation-for="Notes" class="text-danger"></span>
+                </div>
+
+                @* Check if follow up needed *@
+                <div class="form-group" id="chkFollowUp">
+                    <div>
+                        <label>
+                            <label class="control-label">Follow Up</label>
+                            <input type="checkbox" asp-for="FollowUp" />
+                            <span asp-validation-for="FollowUp" class="text-danger"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Next" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
 </div>
 
 @section Scripts {
@@ -146,14 +148,14 @@
         document.getElementById('checkInterested').style.display = "none";
         document.getElementById('chkFollowUp').style.display = "none";
 
-                                                                                                                            //$(document).ready(function () {
-                                                                                                                            //    $(".currentdatetime").datetimepicker({
-                                                                                                                            //        format: 'DD-MM-YYYY HH:MM',
-                                                                                                                            //        inline: true,
-                                                                                                                            //        sideBySide: true,
-                                                                                                                            //        toolbarPlacement: 'bottom'
-                                                                                                                            //    });
-                                                                                                                            //});
+                                                                                                                                                        //$(document).ready(function () {
+                                                                                                                                                        //    $(".currentdatetime").datetimepicker({
+                                                                                                                                                        //        format: 'DD-MM-YYYY HH:MM',
+                                                                                                                                                        //        inline: true,
+                                                                                                                                                        //        sideBySide: true,
+                                                                                                                                                        //        toolbarPlacement: 'bottom'
+                                                                                                                                                        //    });
+                                                                                                                                                        //});
 
 
     </script>

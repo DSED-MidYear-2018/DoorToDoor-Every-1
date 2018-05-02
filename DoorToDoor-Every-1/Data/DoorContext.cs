@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DoorToDoor_Every_1.DTO;
 using DoorToDoor_Every_1.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,6 +21,7 @@ namespace DoorToDoor_Every_1.Data
         public DbSet<FollowUp> FollowUps { get; set; }
         public DbSet<Admin> Admins { get; set; }
         public DbSet<AdminRole> AdminRole { get; set; }
+        public DbSet<AddressContactDTO> AddressContact { get; set; }
 
 
         //https://docs.microsoft.com/en-us/ef/core/modeling/keys

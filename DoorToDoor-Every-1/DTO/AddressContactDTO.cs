@@ -10,36 +10,36 @@ namespace DoorToDoor_Every_1.DTO
     {
         public int Id { get; set; }
 
-        public static string Unit { get; set; }
+        public string Unit { get; set; }
 
-        public static int StreetNumber { get; set; }
+        public int StreetNumber { get; set; }
 
-        public static string StreetName { get; set; }
+        public string StreetName { get; set; }
 
-        public static string Suburb { get; set; }
+        public string Suburb { get; set; }
 
-        public static string City { get; set; }
+        public string City { get; set; }
 
-        public static string Country { get; set; }
+        public string Country { get; set; }
 
-        public static string Postcode { get; set; }
+        public string Postcode { get; set; }
 
-        public static bool DoorAnswered { get; set; }
+        public bool DoorAnswered { get; set; }
 
-        public static bool Interested { get; set; }
+        public bool Interested { get; set; }
 
-        public static string Notes { get; set; }
+        public string Notes { get; set; }
 
-        public static DateTime Visited { get; set; }
+        public DateTime Visited { get; set; }
 
-        public static bool FollowUp { get; set; }
+        public bool FollowUp { get; set; }
 
-        public static string Name { get; set; }
+        public string Name { get; set; }
 
-        public static string Phone { get; set; }
+        public string Phone { get; set; }
 
-        public static string Email { get; set; }
+        public string Email { get; set; }
 
-        public static int AddressId { get; set; }
+        public int AddressId { get; set; }
     }
 }

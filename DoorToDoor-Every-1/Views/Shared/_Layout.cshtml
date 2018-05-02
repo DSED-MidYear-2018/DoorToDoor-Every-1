@@ -7,7 +7,7 @@
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        
+
 
         <link href="@Url.Content("~/css/site.css")" rel="stylesheet" />
         @RenderSection("css", false)
@@ -43,11 +43,11 @@
                     <li>
                         <a asp-area="" asp-controller="Home" asp-action="ContactMenu">Contact</a>
                         <!--  <ul>
-          <li><a asp-area="" asp-controller="ContactMenu" asp-action="Interested">Interested</a></li>
-          <li><a asp-area="" asp-controller="ContactMenu" asp-action="NotInterested">Not Interested</a></li>
-          <li><a asp-area="" asp-controller="ContactMenu" asp-action="NotHome">Not Home</a></li>
-          <li><a asp-area="" asp-controller="ContactMenu" asp-action="FollowUp">Follow Up</a></li>
-      </ul> -->
+                            <li><a asp-area="" asp-controller="ContactMenu" asp-action="Interested">Interested</a></li>
+                            <li><a asp-area="" asp-controller="ContactMenu" asp-action="NotInterested">Not Interested</a></li>
+                            <li><a asp-area="" asp-controller="ContactMenu" asp-action="NotHome">Not Home</a></li>
+                            <li><a asp-area="" asp-controller="ContactMenu" asp-action="FollowUp">Follow Up</a></li>
+                        </ul> -->
                     </li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Admin">Admin</a></li>
                     <li><a asp-area="" asp-controller="Addresses" asp-action="Create">Create New Address</a></li>
@@ -61,9 +61,11 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Every-1</p>
-        </footer>
+        <div class="details">
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Every-1</p>
+            </footer>
+        </div>
     </div>
 
     <environment include="Development">

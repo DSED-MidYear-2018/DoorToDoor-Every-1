@@ -6,7 +6,6 @@
     background-position: left top;
     background-attachment: fixed;
     background-size: cover;
-
 }
 
 
@@ -17,7 +16,6 @@
     background-position: left top;
     background-attachment: fixed;
     background-size: cover;
-    
 }
 
 /* Wrapping element */
@@ -66,10 +64,8 @@ UL.nav > LI:hover UL {
 }
 
 .table {
-
     background-color: white;
     opacity: 0.8;
-
 }
 
 
@@ -80,15 +76,9 @@ UL.nav > LI:hover UL {
     left: 0;
     width: 100%;
     background-color: white;
-   
-
 }
 
-.formcolour 
- 
-
-{
-
+.formcolour {
     height: 100%;
     position: absolute;
     top: 0;
@@ -99,14 +89,13 @@ UL.nav > LI:hover UL {
 }
 
 a {
-
-    color: white;
+    color: #fe8a00;
 }
 
-a:hover {
-
-    color:white;
-}
+    a:hover {
+        color: #DE1800;
+        text-decoration: none;
+    }
 
 
 
@@ -117,8 +106,6 @@ form {
     border-radius: 2px;
     font: black;
     line-height: 22px;
-    
-
 }
 
 
@@ -127,7 +114,7 @@ form {
 }
 
 .whitetext {
-    color:white;
+    color: white;
 }
 
 
@@ -149,13 +136,41 @@ form {
     color: #fe8a00;
 }
 
-
-.btn-default:hover {
-    background-color: #fe8a00;
-    border-color: white;
-    color: white;
+.btn-default {
+    background-color: white;
+    border-color: black;
+    color: #fe8a00
 }
+
+    .btn-default:hover {
+        background-color: #fe8a00;
+        border-color: white;
+        color: white;
+    }
 
 .label {
     color: #fe8a00;
+}
+
+.details {
+    background-color: white;
+    opacity: 0.9;
+    padding: 8px;
+    margin: 5px;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.clear {
+    clear: both;
+}
+
+.col-md-12 {
+    background-color: white;
+    opacity: 0.9;
+    padding: 8px;
+    margin: 5px;
 }
