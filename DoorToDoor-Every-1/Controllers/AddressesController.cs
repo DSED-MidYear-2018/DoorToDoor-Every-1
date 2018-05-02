@@ -22,11 +22,14 @@ namespace DoorToDoor_Every_1.Controllers
   
         private readonly DoorContext _context;
 
+
         public AddressesController(DoorContext context)
         {
             _context = context;
         }
 
+
+        [Authorize]
         // GET: Addresses
         public async Task<IActionResult> Index()
         {
@@ -58,7 +61,7 @@ namespace DoorToDoor_Every_1.Controllers
 
             
 
-   
+   [Authorize]
         public IActionResult Create()
         {
             return View();

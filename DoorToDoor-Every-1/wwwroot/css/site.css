@@ -1,7 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-image: url("../images/homepagenewimage.jpg");
+    background-image: url("../images/homepageimagenewversion.png");
     background-repeat: no-repeat;
     background-position: left top;
     background-attachment: fixed;
@@ -11,14 +11,7 @@
 
 
 
-#backgroundimage {
-    background-image: url("../images/homepagenewimage.jpg") linear-gradient(transparant, black);
-    background-repeat: no-repeat;
-    background-position: left top;
-    background-attachment: fixed;
-    background-size: cover;
-    
-}
+
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */

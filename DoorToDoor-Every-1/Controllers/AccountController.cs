@@ -248,7 +248,7 @@ namespace DoorToDoor_Every_1.Controllers
         {
             await _signInManager.SignOutAsync();
             _logger.LogInformation("User logged out.");
-            return RedirectToAction(nameof(HomeController.Index), "Home");
+            return RedirectToAction(nameof(AddressesController.Index), "Home");
         }
 
         [HttpPost]
