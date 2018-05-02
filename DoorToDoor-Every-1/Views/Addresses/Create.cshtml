@@ -6,22 +6,21 @@
 }
 
 
-<div class="details">
-    <h1>Create</h1>
-</div>
-<div class="details">
-    <h2>Address</h2>
-    <hr />
-    <div class="row">
-        <div class="col-md-12">
-            <form asp-action="Create" id="table">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                @* Unit *@
-                <div class="form-group">
-                    <label asp-for="Unit" class="control-label"></label>
-                    <input asp-for="Unit" class="form-control" />
-                    <span asp-validation-for="Unit" class="text-danger"></span>
-                </div>
+
+<h1>Create</h1>
+
+<h4>Address</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create" id="table">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @* Unit *@
+            <div class="form-group">
+                <label asp-for="Unit" class="control-label"></label>
+                <input asp-for="Unit" class="form-control" />
+                <span asp-validation-for="Unit" class="text-danger"></span>
+            </div>
 
                 @* Street Number *@
                 <div class="form-group">
@@ -148,14 +147,14 @@
         document.getElementById('checkInterested').style.display = "none";
         document.getElementById('chkFollowUp').style.display = "none";
 
-                                                                                                                                                        //$(document).ready(function () {
-                                                                                                                                                        //    $(".currentdatetime").datetimepicker({
-                                                                                                                                                        //        format: 'DD-MM-YYYY HH:MM',
-                                                                                                                                                        //        inline: true,
-                                                                                                                                                        //        sideBySide: true,
-                                                                                                                                                        //        toolbarPlacement: 'bottom'
-                                                                                                                                                        //    });
-                                                                                                                                                        //});
+                                                                                                                            //$(document).ready(function () {
+                                                                                                                            //    $(".currentdatetime").datetimepicker({
+                                                                                                                            //        format: 'DD-MM-YYYY HH:MM',
+                                                                                                                            //        inline: true,
+                                                                                                                            //        sideBySide: true,
+                                                                                                                            //        toolbarPlacement: 'bottom'
+                                                                                                                            //    });
+                                                                                                                            //});
 
 
     </script>

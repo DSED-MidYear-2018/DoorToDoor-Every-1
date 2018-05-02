@@ -10,18 +10,26 @@ using DoorToDoor_Every_1.DTO;
 using DoorToDoor_Every_1.Models;
 using DoorToDoor_Every_1.Operations;
 using Microsoft.EntityFrameworkCore.Extensions.Internal;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DoorToDoor_Every_1.Controllers
 {
+
+    
     public class AddressesController : Controller
     {
+
+  
         private readonly DoorContext _context;
+
 
         public AddressesController(DoorContext context)
         {
             _context = context;
         }
 
+
+        [Authorize]
         // GET: Addresses
         public async Task<IActionResult> Index()
         {
@@ -49,10 +57,18 @@ namespace DoorToDoor_Every_1.Controllers
         }
 
         // GET: Addresses/Create
+
+
+            
+
+   [Authorize]
         public IActionResult Create()
         {
             return View();
         }
+
+   
+
 
         // POST: Addresses/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 

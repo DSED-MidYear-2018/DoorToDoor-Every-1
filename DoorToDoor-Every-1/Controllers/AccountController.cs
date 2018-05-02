@@ -240,6 +240,8 @@ namespace DoorToDoor_Every_1.Controllers
             return View(model);
         }
 
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
@@ -334,7 +336,7 @@ namespace DoorToDoor_Every_1.Controllers
         {
             if (userId == null || code == null)
             {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                return RedirectToAction(nameof(AddressesController.Create), "Home");
             }
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
@@ -435,6 +437,7 @@ namespace DoorToDoor_Every_1.Controllers
         {
             return View();
         }
+
 
         #region Helpers
 
