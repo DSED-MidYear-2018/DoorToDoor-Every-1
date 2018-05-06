@@ -15,6 +15,12 @@
     <Compile Remove="Migrations\20180412201841_Init.Designer.cs" />
     <Compile Remove="Migrations\20180412215152_Init.cs" />
     <Compile Remove="Migrations\20180412215152_Init.Designer.cs" />
+    <Compile Remove="Migrations\20180412215608_Init.cs" />
+    <Compile Remove="Migrations\20180412215608_Init.Designer.cs" />
+    <Compile Remove="Migrations\20180502014349_AddressContact.cs" />
+    <Compile Remove="Migrations\20180502014349_AddressContact.Designer.cs" />
+    <Compile Remove="Migrations\20180506214454_Followup.cs" />
+    <Compile Remove="Migrations\20180506214454_Followup.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

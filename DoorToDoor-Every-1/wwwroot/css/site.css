@@ -152,13 +152,6 @@ form {
     color: #fe8a00;
 }
 
-.details {
-    background-color: white;
-    opacity: 0.9;
-    padding: 8px;
-    margin: 5px;
-}
-
 h1, h2, h3 {
     text-align: center;
     font-weight: bold;
@@ -168,9 +161,13 @@ h1, h2, h3 {
     clear: both;
 }
 
-.col-md-12 {
+.layoutdetails {
     background-color: white;
     opacity: 0.9;
     padding: 8px;
-    margin: 5px;
+    margin: 15px;
+}
+
+hr {
+    border-color: #DE1800;
 }

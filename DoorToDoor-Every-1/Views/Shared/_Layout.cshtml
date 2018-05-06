@@ -40,25 +40,15 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li>
-                        <a asp-area="" asp-controller="Home" asp-action="ContactMenu">Contact</a>
-                        <!--  <ul>
-          <li><a asp-area="" asp-controller="ContactMenu" asp-action="Interested">Interested</a></li>
-          <li><a asp-area="" asp-controller="ContactMenu" asp-action="NotInterested">Not Interested</a></li>
-          <li><a asp-area="" asp-controller="ContactMenu" asp-action="NotHome">Not Home</a></li>
-          <li><a asp-area="" asp-controller="ContactMenu" asp-action="FollowUp">Follow Up</a></li>
-      </ul> -->
-                    </li>
-                    @*<li><a asp-area="" asp-controller="Home" asp-action="Admin">Admin</a></li>*@
-
+                    <li><a asp-area="" asp-controller="Home" asp-action="ContactMenu">Contact</a></li>
                     <li>
                         @if (User.Identity.IsAuthenticated)
-        {
-                @if (User.IsInRole("Admin"))
-{
-                <a asp-area="" asp-controller="Admin" asp-action="Index">Admin Page</a>
-}
-}
+                        {
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <a asp-area="" asp-controller="Admin" asp-action="Index">Admin Page</a>
+                            }
+                        }
                     </li>
 
                     <li><a asp-area="" asp-controller="Addresses" asp-action="Index">Address (to be deleted)</a></li>
@@ -69,11 +59,21 @@
         </div>
     </nav>
     <div class="container body-content">
-        @RenderBody()
+        <div class="layoutdetails">
+            <h1>@ViewData["Title"]</h1>
+        </div>
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year</p>
-        </footer>
+        <div class="layoutdetails">
+            @RenderBody()
+        </div>
+        <hr />
+        <div class="layoutdetails">
+
+
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Every-1</p>
+            </footer>
+        </div>
     </div>
 
     <environment include="Development">
