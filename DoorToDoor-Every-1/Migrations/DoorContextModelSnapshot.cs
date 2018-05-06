@@ -171,10 +171,6 @@ namespace DoorToDoor_Every_1.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AddressId");
-
-                    b.HasIndex("OccuranceId");
-
                     b.ToTable("FollowUps");
                 });
 
@@ -195,19 +191,6 @@ namespace DoorToDoor_Every_1.Migrations
                     b.HasOne("DoorToDoor_Every_1.Models.AdminRole", "AdminRoles")
                         .WithMany()
                         .HasForeignKey("AdminRoleId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("DoorToDoor_Every_1.Models.FollowUp", b =>
-                {
-                    b.HasOne("DoorToDoor_Every_1.Models.Address", "Addresses")
-                        .WithMany()
-                        .HasForeignKey("AddressId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("DoorToDoor_Every_1.Models.Occurance", "Occurances")
-                        .WithMany()
-                        .HasForeignKey("OccuranceId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
