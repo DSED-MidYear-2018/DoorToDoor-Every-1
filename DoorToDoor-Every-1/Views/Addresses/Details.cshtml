@@ -95,14 +95,20 @@
         </div>
     </div>
     <div class="col-md-6">
-        <h4>Contacts</h4>
-        <div>
-            <a asp-area="" asp-controller="Contacts" asp-action="Index">View Contacts</a> |
-            <a asp-area="" asp-controller="Contacts" asp-action="Create">Create New Contact</a>
-        </div>
+        @if (Model.Interested == true)
+        {
+            <h4>Contacts</h4>
+            <div>
+                <a asp-area="" asp-controller="Contacts" asp-action="Index">View Contacts</a> |
+                <a asp-area="" asp-controller="Contacts" asp-action="Create">Create New Contact</a>
+            </div>
+        }
 
-        <h4>Follow Ups</h4>
-        <p>Text to go here...</p>
+        @if (Model.FollowUp == true)
+        {
+            <h4>Follow Ups</h4>
+            <p>Text to go here...</p>
+        }
     </div>
 </div>
 
