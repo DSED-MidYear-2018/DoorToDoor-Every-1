@@ -1,0 +1,69 @@
+﻿@using DoorToDoor_Every_1.Operations
+@using Microsoft.CodeAnalysis.Differencing
+@model IEnumerable<DoorToDoor_Every_1.Models.Address>
+
+@{
+    ViewData["Title"] = "Not Home";
+    ViewData["Header"] = "Addresses - Not Interested";
+}
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table" id="table">
+    <thead>
+        <tr>
+            <th>
+                <label>Address</label>
+            </th>
+            <th>
+                <label>Home?</label>
+            </th>
+            <th>
+                <label>Interested?</label>
+            </th>
+            <th>
+                <label>Follow Up?</label>
+            </th>
+            <th>
+                <label>Date Visited</label>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            @if (item.DoorAnswered && item.Interested != true)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Unit)
+                        @Html.DisplayFor(modelItem => item.StreetNumber)
+                        @Html.DisplayFor(modelItem => item.StreetName),
+                        @Html.DisplayFor(modelItem => item.Suburb),
+                        @Html.DisplayFor(modelItem => item.Postcode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DoorAnswered)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Interested)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FollowUp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Visited)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+
+        }
+    </tbody>
+</table>
