@@ -1,9 +1,15 @@
-﻿@model DoorToDoor_Every_1.Models.Contact
+﻿@using DoorToDoor_Every_1.Operations
+@model DoorToDoor_Every_1.Models.Contact
 
 @{
     ViewData["Title"] = "Delete";
     ViewData["Header"] = "Delete Contact";
 }
+<div id="address">
+    <h4>For Address</h4>
+    <p>@DatabaseManager.Address</p>
+</div>
+<hr />
 <h3>Are you sure you want to delete this?</h3>
 <hr />
 <div>
