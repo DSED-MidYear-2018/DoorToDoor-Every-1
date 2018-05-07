@@ -1,11 +1,11 @@
-﻿@model IEnumerable<DoorToDoor_Every_1.Models.Address>
+﻿@using DoorToDoor_Every_1.Operations
+@using Microsoft.CodeAnalysis.Differencing
+@model IEnumerable<DoorToDoor_Every_1.Models.Address>
 
 @{
     ViewData["Title"] = "Index";
+    ViewData["Header"] = "Addresses";
 }
-
-<h1>Addresses</h1>
-
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -22,6 +22,7 @@
         </tr>
     </thead>
     <tbody>
+
         @foreach (var item in Model)
         {
             <tr>
