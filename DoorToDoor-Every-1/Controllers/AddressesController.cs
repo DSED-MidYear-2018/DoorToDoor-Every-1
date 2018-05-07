@@ -15,11 +15,11 @@ using Microsoft.AspNetCore.Authorization;
 namespace DoorToDoor_Every_1.Controllers
 {
 
-    
+
     public class AddressesController : Controller
     {
 
-  
+
         private readonly DoorContext _context;
 
 
@@ -32,6 +32,34 @@ namespace DoorToDoor_Every_1.Controllers
         [Authorize]
         // GET: Addresses
         public async Task<IActionResult> Index()
+        {
+            return View(await _context.Addresses.ToListAsync());
+        }
+
+        [Authorize]
+        // GET: Addresses - Not Home
+        public async Task<IActionResult> NotHome()
+        {
+            return View(await _context.Addresses.ToListAsync());
+        }
+
+        [Authorize]
+        // GET: Addresses - Interested
+        public async Task<IActionResult> Interested()
+        {
+            return View(await _context.Addresses.ToListAsync());
+        }
+
+        [Authorize]
+        // GET: Addresses - Not Interested
+        public async Task<IActionResult> NotInterested()
+        {
+            return View(await _context.Addresses.ToListAsync());
+        }
+
+        [Authorize]
+        // GET: Addresses - Follow Up
+        public async Task<IActionResult> FollowUp()
         {
             return View(await _context.Addresses.ToListAsync());
         }
@@ -59,15 +87,15 @@ namespace DoorToDoor_Every_1.Controllers
         // GET: Addresses/Create
 
 
-            
 
-   [Authorize]
+
+        [Authorize]
         public IActionResult Create()
         {
             return View();
         }
 
-   
+
 
 
         // POST: Addresses/Create

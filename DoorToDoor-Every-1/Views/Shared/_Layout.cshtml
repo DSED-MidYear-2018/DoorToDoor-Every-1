@@ -45,13 +45,12 @@
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li class="dropdown">
-                        <a data-toggle="dropdown" asp-area="" asp-controller="Home" asp-action="Contact">Contact <span class="caret"></span></a>
+                        <a data-toggle="dropdown" asp-area="" asp-controller="Addresses" asp-action="Contact">Addresses <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Not Home</a></li>
-                            <li><a href="#">Interested</a></li>
-                            <li><a href="#">Not Interested</a></li>
-                            <li><a href="#">Follow Up</a></li>
-
+                            <li><a asp-area="" asp-controller="Addresses" asp-action="NotHome">Not Home</a></li>
+                            <li><a asp-area="" asp-controller="Addresses" asp-action="Interested">Interested</a></li>
+                            <li><a asp-area="" asp-controller="Addresses" asp-action="NotInterested">Not Interested</a></li>
+                            <li><a asp-area="" asp-controller="Addresses" asp-action="FollowUp">Follow Up</a></li>
                         </ul>
                     </li>
                     <li>

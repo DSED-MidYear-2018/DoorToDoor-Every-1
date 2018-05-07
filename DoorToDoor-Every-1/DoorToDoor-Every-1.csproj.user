@@ -14,5 +14,6 @@
     <WebStackScaffolding_DbContextDialogWidth>600</WebStackScaffolding_DbContextDialogWidth>
     <NameOfLastUsedPublishProfile>CustomProfile1</NameOfLastUsedPublishProfile>
     <WebStackScaffolding_ViewDialogWidth>600</WebStackScaffolding_ViewDialogWidth>
+    <ShowAllFiles>false</ShowAllFiles>
   </PropertyGroup>
 </Project>
