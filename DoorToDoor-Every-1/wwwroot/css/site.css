@@ -172,6 +172,10 @@ hr {
     border-color: #DE1800;
 }
 
+#address {
+    text-align: center;
+}
+
 
 /* Navbar */
 .mega-dropdown {
