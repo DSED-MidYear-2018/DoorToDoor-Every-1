@@ -7,18 +7,13 @@
 
 @{
     ViewData["Title"] = "Log in";
+    ViewData["Header"] = "Log in";
 }
 
-<link href="~/css/site2.css" rel="stylesheet" />
-
-
-<h2>@ViewData["Title"]</h2>
 <div class="row">
     <div class="col-md-12">
         <section>
             <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
-                <h4>Use a local account to log in.</h4>
-                <hr />
                 <div asp-validation-summary="All" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="Email"></label>

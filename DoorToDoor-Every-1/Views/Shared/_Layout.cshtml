@@ -53,6 +53,7 @@
                             <li><a asp-area="" asp-controller="Addresses" asp-action="FollowUp">Follow Up</a></li>
                         </ul>
                     </li>
+                    <li><a asp-area="" asp-controller="Addresses" asp-action="Create">New Address</a></li>
                     <li>
                         @if (User.Identity.IsAuthenticated)
                         {
@@ -63,8 +64,7 @@
                         }
                     </li>
 
-                    <li><a asp-area="" asp-controller="Addresses" asp-action="Index">Address (to be deleted)</a></li>
-                    <li><a asp-area="" asp-controller="Contacts" asp-action="Index">Contact (to be deleted)</a></li>
+
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
             </div><!-- /.nav-collapse -->
@@ -82,8 +82,6 @@
         </div>
         <hr />
         <div class="layoutdetails">
-
-
             <footer>
                 <p>&copy; @DateTime.Now.Year</p>
             </footer>
