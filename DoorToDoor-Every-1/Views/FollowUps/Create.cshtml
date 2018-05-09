@@ -1,26 +1,35 @@
-﻿@model DoorToDoor_Every_1.Models.FollowUp
+﻿@using DoorToDoor_Every_1.Operations
+@model DoorToDoor_Every_1.Models.FollowUp
 
 @{
     ViewData["Title"] = "Create";
+    ViewData["Header"] = "Create Follow Up";
 }
 
-<h2>Create</h2>
 
-<h4>FollowUp</h4>
+<div id="address">
+    <h4>For Address</h4>
+    <p>@DatabaseManager.Address</p>
+</div>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="DateReturn" class="control-label"></label>
+                <label asp-for="DateReturn" class="control-label">Date Return</label>
                 <input asp-for="DateReturn" class="form-control" />
                 <span asp-validation-for="DateReturn" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TimeReturn" class="control-label"></label>
+                <label asp-for="TimeReturn" class="control-label">Time Return</label>
                 <input asp-for="TimeReturn" class="form-control" />
                 <span asp-validation-for="TimeReturn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddressId" class="control-label"></label>
+                <input asp-for="AddressId" class="form-control" readonly="readonly" value="@DatabaseManager.AddressId" />
+                <span asp-validation-for="AddressId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />

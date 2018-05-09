@@ -20,12 +20,12 @@
                     <span asp-validation-for="Addresses" class="text-danger"></span>
                 </div>*@
             <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
+                <label asp-for="FirstName" class="control-label">First Name</label>
                 <input asp-for="FirstName" class="form-control" />
                 <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
+                <label asp-for="LastName" class="control-label">Last Name</label>
                 <input asp-for="LastName" class="form-control" />
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
@@ -41,7 +41,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="AddressId" class="control-label"></label>
-                <input asp-for="AddressId" class="form-control" value="@DatabaseManager.AddressId" />
+                <input asp-for="AddressId" class="form-control" readonly="readonly" value="@DatabaseManager.AddressId" />
                 <span asp-validation-for="AddressId" class="text-danger"></span>
             </div>
             <div class="form-group">

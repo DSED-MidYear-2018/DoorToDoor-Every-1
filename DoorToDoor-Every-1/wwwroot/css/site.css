@@ -131,6 +131,10 @@ h1, h2, h3 {
     margin: 15px;
 }
 
+    .layoutdetails hr {
+        border-color: gray;
+    }
+
 hr {
     border-color: #DE1800;
 }
