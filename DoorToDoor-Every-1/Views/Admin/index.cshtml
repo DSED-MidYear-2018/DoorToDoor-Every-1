@@ -1,12 +1,32 @@
 ﻿
+
+
 @{
     ViewData["Title"] = "Admin Page";
 }
 
 
-@model IEnumerable<RegisterViewModel>
+@model IEnumerable<ApplicationUser>
 
 
 <h2>@ViewData["Title"]</h2>
 
-<h2>Index</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>
+       
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Email</td>
+
+                <td></td>
+          
+            </tr>
+        }
+    </tbody>
+</table>
