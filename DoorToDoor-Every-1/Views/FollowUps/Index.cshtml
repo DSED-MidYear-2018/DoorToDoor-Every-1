@@ -1,4 +1,5 @@
 ﻿@using DoorToDoor_Every_1.Operations
+@using Humanizer
 @model IEnumerable<DoorToDoor_Every_1.Models.FollowUp>
 
 @{
@@ -18,11 +19,12 @@
 <table class="table">
     <thead>
         <tr>
+            <th>Address ID</th>
             <th>
-                @Html.DisplayNameFor(model => model.DateReturn)
+                Date Return
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TimeReturn)
+                Time Return
             </th>
             <th></th>
         </tr>
@@ -30,19 +32,25 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DateReturn)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TimeReturn)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
+            @if (item.AddressId == DatabaseManager.AddressId)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AddressId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateReturn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TimeReturn)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
         }
     </tbody>
 </table>

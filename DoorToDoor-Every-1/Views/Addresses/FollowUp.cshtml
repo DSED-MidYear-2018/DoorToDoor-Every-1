@@ -3,7 +3,7 @@
 @model IEnumerable<DoorToDoor_Every_1.Models.Address>
 
 @{
-    ViewData["Title"] = "Not Home";
+    ViewData["Title"] = "Follow Up";
     ViewData["Header"] = "Addresses - Follow Up";
 }
 <p>
@@ -14,15 +14,6 @@
         <tr>
             <th>
                 <label>Address</label>
-            </th>
-            <th>
-                <label>Home?</label>
-            </th>
-            <th>
-                <label>Interested?</label>
-            </th>
-            <th>
-                <label>Follow Up?</label>
             </th>
             <th>
                 <label>Date Visited</label>
@@ -45,21 +36,13 @@
                         @Html.DisplayFor(modelItem => item.Postcode)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.DoorAnswered)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Interested)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.FollowUp)
-                    </td>
-                    <td>
                         @Html.DisplayFor(modelItem => item.Visited)
                     </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                         <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
                     </td>
                 </tr>
             }

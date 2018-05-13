@@ -13,20 +13,26 @@
 </div>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="DateReturn" class="control-label">Date Return</label>
-                <input asp-for="DateReturn" class="form-control" />
+                <input asp-for="DateReturn" type="date" value="@DateTime.Now.ToString("dd/MM/yyyy")" data-date-format="dd/mm/yyyy" class="form-control" />
                 <span asp-validation-for="DateReturn" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="TimeReturn" class="control-label">Time Return</label>
-                <input asp-for="TimeReturn" class="form-control" />
+                <select asp-for="TimeReturn" asp-items="ViewBag.TimeReturnList" class="form-control">
+                    <option>Please select one</option>
+                    <option>9:00 am - 12:00 pm</option>
+                    <option>12:00 pm - 3:00 pm</option>
+                    <option>3:00 pm - 6:00 pm</option>
+                    <option>6:00 pm - 8:00 pm</option>
+                </select>
                 <span asp-validation-for="TimeReturn" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="addressId">
                 <label asp-for="AddressId" class="control-label"></label>
                 <input asp-for="AddressId" class="form-control" readonly="readonly" value="@DatabaseManager.AddressId" />
                 <span asp-validation-for="AddressId" class="text-danger"></span>
