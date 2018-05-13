@@ -22,7 +22,43 @@ namespace DoorToDoor_Every_1.Controllers
         // GET: FollowUps
         public async Task<IActionResult> Index()
         {
-            return View(await _context.FollowUps.ToListAsync());
+            //var fu = _context.FollowUps.ToList();
+            //// var followup = new list<FollowUp>;
+            //List<FollowUp> allfu = new List<FollowUp>();
+
+            //FollowUp singlefu = new FollowUp();
+
+            //foreach (var item in fu)
+            //{
+            //    singlefu.DateReturn = item.DateReturn.Date;
+
+
+            //    allfu.Add(singlefu);
+            //}
+            //return View(await allfu);
+
+            //int day;
+            //int month;
+            //int year;
+            string sd;
+            FollowUp _myFollowUp = new FollowUp();
+            var fu = _context.FollowUps;
+
+            //foreach (var item in fu)
+            //{
+            //    //day = item.DateReturn.Date.Day;
+            //    //month = item.DateReturn.Date.Month;
+            //    //year = item.DateReturn.Date.Year;
+            //    //sd = day + "/" + month + "/" + year;
+
+            //    //sd = item.DateReturn.ToShortDateString();
+
+            //    //item.DateReturn = Convert.ToDateTime(sd).Date;
+            //    _myFollowUp.ShortDate();
+            //}
+
+
+            return View(await fu.ToListAsync());
         }
 
         // GET: FollowUps/Details/5
@@ -54,7 +90,7 @@ namespace DoorToDoor_Every_1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,DateReturn,TimeReturn")] FollowUp followUp)
+        public async Task<IActionResult> Create([Bind("Id,DateReturn,TimeReturn,AddressId")] FollowUp followUp)
         {
             if (ModelState.IsValid)
             {

@@ -39,7 +39,7 @@
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="addressId">
                 <label asp-for="AddressId" class="control-label"></label>
                 <input asp-for="AddressId" class="form-control" readonly="readonly" value="@DatabaseManager.AddressId" />
                 <span asp-validation-for="AddressId" class="text-danger"></span>
