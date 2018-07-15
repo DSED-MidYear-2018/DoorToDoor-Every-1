@@ -40,6 +40,8 @@ namespace DoorToDoor_Every_1
 
             services.AddMvc();
 
+
+            //Password requirements
             services.Configure<IdentityOptions>(options =>
             {
                 options.Password.RequireDigit = false;
